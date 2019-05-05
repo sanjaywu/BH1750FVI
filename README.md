@@ -157,7 +157,7 @@ case RT_SENSOR_CLASS_LIGHT:
 ## 5 联系方式
 
 * 维护：[Sanjay_Wu](https://github.com/sanjaywu)
-* 主页：[https://github.com/sanjaywu/bh1750](https://github.com/sanjaywu/bh1750 "https://github.com/sanjaywu/bh1750")
+* 主页：[https://github.com/sanjaywu/BH1750FVI](https://github.com/sanjaywu/BH1750FVI "https://github.com/sanjaywu/BH1750FVI")
 * 邮箱：sanjaywu@yeah.net
 
 
