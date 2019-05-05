@@ -51,8 +51,7 @@ RT-Thread online packages --->
 
 每个功能的配置说明如下：
 
-- `BH1750FVI: Digital 16bit Serial Output Type Ambient Light Sensor IC`：选择使用 `BH1750FVI` 传感器软件包；
-- `Enable BH1750 Light`：配置开启光照强度测量；
+- `bh1750 sensor driver package, support: ambient light`：选择使用 `BH1750FVI` 传感器软件包；
 - `Version`：配置软件包版本，默认最新版本。
 
 然后让 RT-Thread 的包管理器自动更新，或者使用 `pkgs --update` 命令更新包到 BSP 中。
