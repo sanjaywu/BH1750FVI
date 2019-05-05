@@ -44,9 +44,8 @@ BH1750FVI 传感器软件包遵循  Apache-2.0 许可，详见 LICENSE 文件。
 RT-Thread online packages --->
     peripheral libraries and drivers --->
         sensors drivers --->
-              [*]   BH1750FVI: Digital 16bit Serial Output Type Ambient Light Sensor IC  --->.
-                	[*]   Enable BH1750 Light
-                   		Version (latest)  --->
+              [*]   bh1750 sensor driver package, support: ambient light.  --->
+                   	Version (latest)  --->
 ```
 
 
@@ -94,7 +93,7 @@ int bh1750_port(void)
 INIT_APP_EXPORT(bh1750_port);
 ```
 
-在使用该传感器前，需进行如上的初始，初始化成功开机会打印如下信息：
+在使用该传感器前，需进行如上的初始，`cfg.intf.dev_name = "i2c2";`根据所挂载的i2c修改，初始化成功开机会打印如下信息：
 
 ```
  \ | /
@@ -148,7 +147,12 @@ msh >
 
 ## 4 注意事项
 
-暂无。
+如果在执行`sensor read`之后没有任何打印出光照强度数据，打开\components\drivers\sensors\sensor_cmd.c,在`sensor_show_data`函数后面自行增加环境光照强度打印代码：
+```
+case RT_SENSOR_CLASS_LIGHT:
+        LOG_I("num:%3d, light:%4d.%d, timestamp:%5d", num, sensor_data->data.light / 10, sensor_data->data.light % 10, sensor_data->timestamp);
+        break;
+```
 
 ## 5 联系方式
 
